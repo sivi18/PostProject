@@ -1,4 +1,4 @@
-import React, { createContext } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "../src/style/output.css";
@@ -9,6 +9,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Singlepost from "./components/Singlepost.jsx";
 import Home from "./components/Home.jsx";
 import Layoutjsx from "./Layout/Layout.jsx";
+import NewPost from "./components/NewPost.jsx";
+import Editpost from "./components/Editpost.jsx";
 store.dispatch(FetchPost());
 const router = createBrowserRouter([
   {
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
       {
         path: "/viewpost/:id",
         element: <Singlepost />,
+      },
+      {
+        path: "/newpost",
+        element: <NewPost />,
+      },
+      {
+        path: "/Editpost/:id",
+        element: <Editpost />,
       },
     ],
   },
